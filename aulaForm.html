@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aula 3 - Formulário</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <script src="./script.js"></script>
+</head>
+
+<body id="main">
+
+    <center>
+        <form method="POST" class="vamoCla">
+            Username:
+            <input type="Login" name="user_name" placeholder="Login" value="" maxlength="60">
+            <br>
+            Password:
+            <input type="password" name="Password" placeholder="Password" value="" maxlength="60">
+            <br><br>
+            <input type="submit" name="Send">
+            <br>
+            <input type="color" name="cor" id="favcolor">
+            <br>
+            <select name="estado">
+                <option value="">Selecione</option>
+                <option value="BA">Bahia</option>
+                <option value="SP">São Paulo</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="RJ" selected>Rio de Janeiro</option>
+            </select>
+            <br><br>
+            Outras Informações
+            <br>
+            <textarea name="info"></textarea>
+            <input type="hidden" name="id_usuario" value="10">
+
+            <input type="submit" value="Salvar">
+
+        </form>
+        <br>
+        <button type="button" onClick="myFunction()">Set color</button>
+    </center>
+</body>
+
+</html>
