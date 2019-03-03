@@ -10,7 +10,7 @@
         body {
             background-color: lightcyan;
             font-size: 20px;
-            padding-top: 20%;
+            padding-top: 10%;
         }
 
         #pacient_inputs {
@@ -33,7 +33,7 @@
                 <input type="text" name="pacient_name" placeholder="Digite o nome do paciente" maxlength="99">
                 <br>
                 <label for="pacient_cpf">CPF do Paciente</label>
-                <input type="number" name="pacient_cpf" placeholder="Digite o CPF do paciente">
+                <input type="number" name="pacient_cpf" placeholder="Digite o CPF do paciente" min="00000000000" max="99999999999">
                 <br>
                 <label for="pacient_email">Email do Paciente</label>
                 <input type="email" name="pacient_email" placeholder="Digite o Email do paciente" maxlength="99">
@@ -56,16 +56,23 @@
             <div id="genero">
                 <label>Escolha o gênero do cliente</label>
                 <br>
+                <label for="no_info">Não informado</label>
+                <input type="radio" name="gender" value="no_info" checked>
+                <br>
                 <label for="masculino">Masculino</label>
-                <input type="radio" name="masculino" value="item 1">
+                <input type="radio" name="gender" value="masculino">
                 <br>
                 <label for="feminino">Feminino</label>
-                <input type="radio" name="feminino" value="item 2">
+                <input type="radio" name="gender" value="feminino">
             </div>
-
+            <br>
+            
             <div id="sintomas_text">
                 <textarea name="sintomas" maxlength="200" placeholder="Digite os Sintomas do paciente" rows="5" cols="50"></textarea>
             </div>
+
+            <input type="submit" name="send" value="Enviar">
+            <input type="reset" value="Resetar Campos">
         </form>
     </body>
 </center>
