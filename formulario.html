@@ -13,12 +13,12 @@
             padding-top: 20%;
         }
 
-        .pacient_inputs {
+        #pacient_inputs {
             width: 300px;
             clear: both;
         }
 
-        .pacient_inputs input {
+        #pacient_inputs input {
             width: 100%;
             clear: both;
         }
@@ -28,17 +28,20 @@
 <center>
     <body>
         <form method="POST">
-            <div class="pacient_inputs">
+            <div id="pacient_inputs">
                 <label for="pacient_name">Nome do Paciente</label>
                 <input type="text" name="pacient_name" placeholder="Digite o nome do paciente" maxlength="99">
                 <br>
                 <label for="pacient_cpf">CPF do Paciente</label>
-                <input type="number" name="pacient_cpf" placeholder="Digite o CPF do paciente" maxlength="11">
+                <input type="number" name="pacient_cpf" placeholder="Digite o CPF do paciente">
                 <br>
                 <label for="pacient_email">Email do Paciente</label>
                 <input type="email" name="pacient_email" placeholder="Digite o Email do paciente" maxlength="99">
             </div>
             <br><br>
+
+            <label>Plano de Saúde</label>
+            <br>
             <select name="health_plan">
                 <option value="" selected>Selecione o Plano do Paciente</option>
                 <option value="bradesco">Bradesco</option>
@@ -49,6 +52,20 @@
                 <option value="portoseguro">Porto Seguro</option>
             </select>
 
+            <br><br>
+            <div id="genero">
+                <label>Escolha o gênero do cliente</label>
+                <br>
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="masculino" value="item 1">
+                <br>
+                <label for="feminino">Feminino</label>
+                <input type="radio" name="feminino" value="item 2">
+            </div>
+
+            <div id="sintomas_text">
+                <textarea name="sintomas" maxlength="200" placeholder="Digite os Sintomas do paciente" rows="5" cols="50"></textarea>
+            </div>
         </form>
     </body>
 </center>
