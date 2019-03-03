@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Desafio HTML Formulário: Prontuário Médico</title>
+
+    <style>
+        body {
+            background-color: lightcyan;
+            font-size: 20px;
+            padding-top: 20%;
+        }
+
+        .pacient_inputs {
+            width: 300px;
+            clear: both;
+        }
+
+        .pacient_inputs input {
+            width: 100%;
+            clear: both;
+        }
+    </style>
+</head>
+
+<center>
+    <body>
+        <form method="POST">
+            <div class="pacient_inputs">
+                <label for="pacient_name">Nome do Paciente</label>
+                <input type="text" name="pacient_name" placeholder="Digite o nome do paciente" maxlength="99">
+                <br>
+                <label for="pacient_cpf">CPF do Paciente</label>
+                <input type="number" name="pacient_cpf" placeholder="Digite o CPF do paciente" maxlength="11">
+                <br>
+                <label for="pacient_email">Email do Paciente</label>
+                <input type="email" name="pacient_email" placeholder="Digite o Email do paciente" maxlength="99">
+            </div>
+            <br><br>
+            <select name="health_plan">
+                <option value="" selected>Selecione o Plano do Paciente</option>
+                <option value="bradesco">Bradesco</option>
+                <option value="planserv">Planserv</option>
+                <option value="unimed">Unimed</option>
+                <option value="allianz">Allianz</option>
+                <option value="biosaude">Biosaude</option>
+                <option value="portoseguro">Porto Seguro</option>
+            </select>
+
+        </form>
+    </body>
+</center>
+
+</html>
