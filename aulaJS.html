@@ -3,40 +3,77 @@
     <head>
         <title>Aula JS</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 
-    <body>
+    <body style="background-color:darkcyan">
+
+        <center style="padding-top: 300px; font-size: 32px">
+            <label>Peso</label>
+            <input type="text" id="peso">
+            <br><br>
+
+            <label>Altura</label>
+            <input type="text" id="altura">
+            <br><br>
+
+            <input type="button" class="btn btn-success" value="Calcular" onclick="calcularImc()"> 
+            <br><br>
+
+            <span id="resultado">Result</span>
+        </center>
+
         <script>
+            function imc(){
 
-            let nome = prompt("Digite seu nome: ");
-            let peso = prompt("Digite seu Peso");
-            let altura = prompt("Digite sua Altura");
-            let valido = confirm("Deseja cadastrar esta pessoa?");
-            let IMC = 0;
-            
-            if(valido){
-                alert("Cadastro Realizado!");
-            }else{
-                nome = "";
-                peso = "";
-                altura = "";
-                alert("Cadastro Não Realizado!");
-            }
-               
-            if(nome != null && nome != ""){
-                alert("Bem Vindo, " + nome + "!");
-            }else{
-                alert("Nome inválido");
+                let nome = prompt("Digite seu nome: ");
+
+                let peso = prompt("Digite seu Peso");
+                peso = peso.replace(",", ".");
+
+                let altura = prompt("Digite sua Altura");
+                altura = altura.replace(",", ".");
+
+                let valido = confirm("Deseja cadastrar esta pessoa?");
+                let IMC = 0;
+                
+                if(valido){
+                    alert("Cadastro Realizado!");
+                }else{
+                    nome = "";
+                    peso = "";
+                    altura = "";
+                    alert("Cadastro Não Realizado!");
+                }
+                
+                if(nome != null && nome != ""){
+                    alert("Bem Vindo, " + nome + "!");
+                }else{
+                    alert("Nome inválido");
+                }
+
+                IMC = peso / (altura * altura);
+
+                if(IMC > 18,5 && IMC < 24,9){
+                    alert(nome + " seu IMC é: " + IMC.toFixed(2) + " e você está dentro do Peso Ideal");
+                }else{
+                    alert(nome + " seu IMC é: " + IMC.toFixed(2)  + " e você está fora do Peso Ideal");
+                }
             }
 
-            IMC = peso / (altura * altura);
+            function calcularImc(){
+                let peso = document.getElementById("peso").value;
+                let altura = document.getElementById("altura").value;
 
-            if(IMC > 18,5 && IMC < 24,9){
-                alert(nome + " seu IMC é: " + IMC.toFixed(2) + " e você está dentro do Peso Ideal");
-            }else{
-                alert(nome + " seu IMC é: " + IMC.toFixed(2)  + " e você está fora do Peso Ideal");
+                peso = peso.replace(",", ".");
+                altura = altura.replace(",", ".");
+
+                let IMC = peso/(altura * altura);
+                
+                document.getElementById("resultado").innerHTML = IMC.toFixed(2);
             }
-            console.log(nome)
+
         </script>
     </body>
 
