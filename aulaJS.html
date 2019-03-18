@@ -7,25 +7,35 @@
 
     <body>
         <script>
+
             let nome = prompt("Digite seu nome: ");
-            let valido = confirm("Deseja cadastrar este nome?");
+            let peso = prompt("Digite seu Peso");
+            let altura = prompt("Digite sua Altura");
+            let valido = confirm("Deseja cadastrar esta pessoa?");
+            let IMC = 0;
             
             if(valido){
                 alert("Cadastro Realizado!");
             }else{
                 nome = "";
+                peso = "";
+                altura = "";
                 alert("Cadastro Não Realizado!");
             }
                
-            
             if(nome != null && nome != ""){
                 alert("Bem Vindo, " + nome + "!");
             }else{
                 alert("Nome inválido");
             }
 
-         
-            
+            IMC = peso / (altura * altura);
+
+            if(IMC > 18,5 && IMC < 24,9){
+                alert(nome + " seu IMC é: " + IMC.toFixed(2) + " e você está dentro do Peso Ideal");
+            }else{
+                alert(nome + " seu IMC é: " + IMC.toFixed(2)  + " e você está fora do Peso Ideal");
+            }
             console.log(nome)
         </script>
     </body>
