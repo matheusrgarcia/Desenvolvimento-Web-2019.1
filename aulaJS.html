@@ -24,7 +24,22 @@
             <span id="resultado">Result</span>
         </center>
 
+        <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script
+            src="http://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
+
         <script>
+           $(document).ready(function(){
+                    $('#peso').mask('00.0', {reverse:true});
+                    $('#altura').mask('00.0', {reverse:true});
+                });
+        </script>
+
+        <script>
+
             function imc(){
 
                 let nome = prompt("Digite seu nome: ");
@@ -63,6 +78,7 @@
             }
 
             function calcularImc(){
+
                 let peso = document.getElementById("peso").value;
                 let altura = document.getElementById("altura").value;
 
@@ -75,6 +91,7 @@
             }
 
         </script>
+
     </body>
 
 </html>
