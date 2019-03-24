@@ -4,28 +4,86 @@
 <head>
     <title>Calculadora Simples</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        #calculadora{
-            padding-left: 30%;
-            padding-top: 20%;
+        #calculadora {
+            float: inline-end;
+            padding-top:130px;
         }
     </style>
 </head>
 
-<body>
-    <div id="calculadora">
-        <label>Primeiro Valor</label>
-        <br>
-        <input type="text" id="campo1" placeholder="Valor 1">
-        <br><br> 
-        <label>Segundo Valor</label>
-        <br>
-        <input type="text" id="campo2" placeholder="Valor 2">
-        <br>
-        <br>
-        <button type="submit">Somar</button>
-        <br>
-    </div>
+<body style="background-color:lightblue">
+        <div id="calculadora">
+            <center>
+                <h1>Calculadora</h1>
+                <label>Primeiro Valor</label>
+                <br>
+                <input type="text" id="campo1" placeholder="Valor 1">
+                <br><br>
+                <label>Segundo Valor</label>
+                <br>
+                <input type="text" id="campo2" placeholder="Valor 2">
+                <br>
+                <br>
+                <button type="submit" class="btn btn-success" onclick="somar()">Somar</button>
+                <button type="submit" class="btn btn-success" onclick="subtrair()">Subtrair</button>
+                <br>
+                <button type="submit" class="btn btn-success" onclick="multiplicar()">Multiplicar</button>
+                <button type="submit" class="btn btn-success" onclick="dividir()">Dividir</button>
+                <br>
+                <alert id="resultado"></alert>
+            </center>
+        </div>
+    <script>
+        function somar() {
+            let primeiro_numero = document.getElementById("campo1").value;
+            let segundo_numero = document.getElementById("campo2").value;
+            
+            primeiro_numero = primeiro_numero.replace(",", ".");
+            segundo_numero = segundo_numero.replace(",", ".");
+
+            let resultado = Number(primeiro_numero) + Number(segundo_numero);
+
+            alert("Resultado da Soma: " + resultado.toFixed(2));
+        }
+        function subtrair() {
+            let primeiro_numero = document.getElementById("campo1").value;
+            let segundo_numero = document.getElementById("campo2").value;
+
+            primeiro_numero = primeiro_numero.replace(",", ".");
+            segundo_numero = segundo_numero.replace(",", ".");
+
+            let resultado = primeiro_numero - segundo_numero;
+
+            alert("Resultado da Subtração: " + resultado.toFixed(2));
+        }
+        function multiplicar() {
+            let primeiro_numero = document.getElementById("campo1").value;
+            let segundo_numero = document.getElementById("campo2").value;
+
+            primeiro_numero = primeiro_numero.replace(",", ".");
+            segundo_numero = segundo_numero.replace(",", ".");
+
+            let resultado = primeiro_numero * segundo_numero;
+
+            alert("Resultado da multiplicação: " + resultado.toFixed(2));
+        }
+        function dividir() {
+            let primeiro_numero = document.getElementById("campo1").value;
+            let segundo_numero = document.getElementById("campo2").value;
+
+            primeiro_numero = primeiro_numero.replace(",", ".");
+            segundo_numero = segundo_numero.replace(",", ".");
+
+            let resultado = primeiro_numero / segundo_numero;
+
+            alert("Resultado da divisão: " + resultado.toFixed(2));
+        }
+
+    </script>
+
 </body>
 
 
