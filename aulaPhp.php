@@ -13,6 +13,15 @@
         $age = "30";
         echo "Meus Dados <br> <b>Nome:</b> $name <br><b>Idade:</b> $age";
     ?>
+
+    <ul>
+    <?php
+    for($i = 0; $i<=100; $i++){
+        echo "<li>Item &i</li>";
+    }
+    ?>
+    </ul>
+
 </body>
 
 </html>
