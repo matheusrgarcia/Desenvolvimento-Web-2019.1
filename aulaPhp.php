@@ -8,20 +8,43 @@
 </head>
 
 <body>
-   <?php
-        $name = "Pedro";
-        $age = "30";
-        echo "Meus Dados <br> <b>Nome:</b> $name <br><b>Idade:</b> $age";
+    <?php
+    $name = "Matheus";
+    $age = "21";
+    echo "Meus Dados <br> <b>Nome:</b> $name <br><b>Idade:</b> $age";
     ?>
 
     <ul>
-    <?php
-    for($i = 0; $i<=100; $i++){
-        echo "<li>Item &i</li>";
-    }
-    ?>
+        <?php
+        for ($i = 0; $i <= 100; $i++) {
+            echo "<li>Item &i</li>";
+        }
+        ?>
     </ul>
+
+    <?php
+        error.reporting(1);
+        
+        //Pegar parâmetros do navegador
+        $quantidade = $_GET["qtd"];
+
+        if($quantidade == NULL){
+            echo "<br> Falta o parâmetro qtd !";
+        }else{
+            for ($i = 0; $i <= quantidade; $i++) {
+                echo "<li>Item &i</li>";
+            }
+        }
+
+        $alunos = array("Aluno 1" => "Matheus", "Felipe", "Lucas");
+        array_push($alunos, "Luiz");
+
+        foreach($alunos as $indice => $aluno){
+            echo "<li>$indice - $aluno</li>";
+        }
+        
+    ?>
 
 </body>
 
-</html>
+</html> 
