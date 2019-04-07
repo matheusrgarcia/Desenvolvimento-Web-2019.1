@@ -13,9 +13,9 @@
     $qtd_linhas = $_GET["qtd_linhas"];
     $qtd_colunas = $_GET["qtd_colunas"];
 
-    if ($qtd_linhas == NULL && $qtd_colunas == NULL) {
+    if ($qtd_linhas == NULL && $qtd_colunas == NULL || q) {
         echo "<br> Falta algum parâmetro de quantidade!";
-    } else if ($qtd_linhas = 0 && $qtd_colunas > 0) {
+    } else if ($qtd_linhas == 0 && $qtd_colunas > 0) {
         echo "<br> O parâmetro qtd_linhas deverá ser maior que zero para existirem colunas!";
     } else {
         echo "<table border='1' height='300px' width='300px'>";
