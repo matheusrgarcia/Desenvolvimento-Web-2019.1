@@ -1,14 +1,34 @@
 <?php
-    //Remove mensagem de alerta
-    error_reporting(1);
+//Remove mensagem de alerta
+error_reporting(1);
 
-    $conexao = new mysqli("localhost");
-    
-    $nome = $_POST["nome"];
-    $telefone = $_POST["telefone"];
-    $email = $_POST["email"];
-    $grupo = $_POST["grupo"];
-    $detalhes = $_POST["detalhes"];
+$conexao = new mysqli("localhost", "root", "", "20191_eng");
+
+if ($conexao->connect_error) {
+    echo "Erro de Conexão<br>";
+}
+
+$nome = $_POST["nome"];
+$telefone = $_POST["telefone"];
+$email = $_POST["email"];
+$grupo = $_POST["grupo"];
+$detalhes = $_POST["detalhes"];
+
+$sql = "INSERT INTO contato(nome, telefone, email, grupo, detalhes) VALUES ('$nome', '$telefone', '$email', '$grupo', '$detalhes')";
+
+echo $sql;
+
+$retorno = $conexao -> query($sql);
+
+if($retorno == true){
+    echo "<script>
+            alert('Cadastrado com Sucesso!');
+            location.href='cadastrar.php';
+            </script:>
+        ";
+}else{
+    echo " alert('Erro!');"
+}
 
 ?>
 
