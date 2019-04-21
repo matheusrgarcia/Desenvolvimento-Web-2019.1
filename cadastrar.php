@@ -54,19 +54,19 @@ if ($_POST != null) {
             <input type="Login" name="nome" placeholder="Nome" value="" maxlength="60">
             <br>
             <label>Matricula:</label>
-            <input type="text" name="matricula" placeholder="phone" value="" maxlength="60">
+            <input type="text" name="matricula" placeholder="Matrícula" value="" maxlength="60">
             <br>
             <label>Email:</label>
-            <input type="email" name="email" placeholder="email" value="" maxlength="60">
+            <input type="email" name="email" placeholder="Email" value="" maxlength="60">
             <br>
             <label>Sexo:</label>
             <br>
             <div id="sexo">
                 <label for="masculino">Masculino</label>
-                <input type="radio" name="gender" value="masculino">
+                <input type="radio" name="sexo" value="masculino">
                 <br>
                 <label for="feminino">Feminino</label>
-                <input type="radio" name="gender" value="feminino">
+                <input type="radio" name="sexo" value="feminino">
             </div>
             </div>
             <br>
